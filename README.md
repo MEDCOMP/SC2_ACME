@@ -74,6 +74,22 @@ novel implementation.
 
 ## Installation
 
+
+### Install in an editable mode:
+```bash
+git clone https://github.com/deepmind/acme.git
+cd acme
+conda create --name acme python=3.7
+conda activate acme
+pip install -e . # install dm-acme
+pip install -e .[reverb]
+pip install -e .[tf]
+pip install -e .[envs]
+pip install -e .[jax]
+pip install .[testing]
+pip install gym[atari]
+```
+
 We have tested `acme` on Python 3.6 & 3.7.
 
 1.  **Optional**: We strongly recommend using a
