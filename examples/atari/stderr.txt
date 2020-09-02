@@ -1,0 +1,74 @@
+2020-08-30 21:16:08.858478: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+[reverb/cc/platform/tfrecord_checkpointer.cc:143] Initializing TFRecordCheckpointer in /tmp/tmpaave0n5v
+[reverb/cc/platform/tfrecord_checkpointer.cc:320] Loading latest checkpoint from /tmp/tmpaave0n5v
+[reverb/cc/platform/default/server.cc:55] Started replay server on port 15763
+2020-08-30 21:16:10.261433: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcuda.so.1
+2020-08-30 21:16:10.292171: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:982] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-08-30 21:16:10.292428: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: GeForce RTX 2080 with Max-Q Design computeCapability: 7.5
+coreClock: 1.23GHz coreCount: 46 deviceMemorySize: 7.79GiB deviceMemoryBandwidth: 357.69GiB/s
+2020-08-30 21:16:10.292446: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+2020-08-30 21:16:10.292524: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcublas.so.10'; dlerror: libcublas.so.10: cannot open shared object file: No such file or directory
+2020-08-30 21:16:10.293512: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcufft.so.10
+2020-08-30 21:16:10.293675: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcurand.so.10
+2020-08-30 21:16:10.294608: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusolver.so.10
+2020-08-30 21:16:10.295145: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusparse.so.10
+2020-08-30 21:16:10.297325: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudnn.so.7
+2020-08-30 21:16:10.297340: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1753] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2020-08-30 21:16:10.297543: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN)to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2020-08-30 21:16:10.302014: I tensorflow/core/platform/profile_utils/cpu_utils.cc:104] CPU Frequency: 2400000000 Hz
+2020-08-30 21:16:10.302411: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x562fe72cdf40 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-08-30 21:16:10.302441: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2020-08-30 21:16:10.305090: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1257] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-08-30 21:16:10.305102: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1263]      
+WARNING:tensorflow:Entity <function _yield_value at 0x7f4eda2ca3b0> appears to be a generator function. It will not be converted by AutoGraph.
+W0830 21:16:10.759316 139977387976512 ag_logging.py:146] Entity <function _yield_value at 0x7f4eda2ca3b0> appears to be a generator function. It will not be converted by AutoGraph.
+2020-08-30 21:16:11.027516: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:118] None of the MLIR optimization passes are enabled (registered 1)
+2020-08-30 21:16:11.032745: W tensorflow/python/util/util.cc:348] Sets are not currently considered sequences, but this may change in the future, so consider avoiding using them.
+I0830 21:16:11.628083 139977387976512 savers.py:166] Attempting to restoring checkpoint: None
+I0830 21:16:11.629062 139977387976512 csv.py:42] Logging to environment_loop/f7a01dce-eac2-11ea-94c4-5c80b69e6231/logs/logs.csv
+2020-08-30 21:16:11.836795: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:118] None of the MLIR optimization passes are enabled (registered 1)
+I0830 21:16:11.856935 139977387976512 savers.py:156] Saving checkpoint: /home/neal/acme/f7a01dce-eac2-11ea-94c4-5c80b69e6231/checkpoints/dqn_learner
+2020-08-30 21:16:19.828917: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:118] None of the MLIR optimization passes are enabled (registered 1)
+2020-08-30 21:16:20.256843: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:118] None of the MLIR optimization passes are enabled (registered 1)
+INFO:tensorflow:Assets written to: /home/neal/acme/f7a01dce-eac2-11ea-94c4-5c80b69e6231/snapshots/network/assets
+I0830 21:16:22.983878 139977387976512 builder_impl.py:775] Assets written to: /home/neal/acme/f7a01dce-eac2-11ea-94c4-5c80b69e6231/snapshots/network/assets
+Traceback (most recent call last):
+  File "run_dqn.py", line 65, in <module>
+    app.run(main)
+  File "/home/neal/anaconda3/envs/acme/lib/python3.7/site-packages/absl/app.py", line 300, in run
+    _run_main(main, args)
+  File "/home/neal/anaconda3/envs/acme/lib/python3.7/site-packages/absl/app.py", line 251, in _run_main
+    sys.exit(main(argv))
+  File "run_dqn.py", line 61, in main
+    loop.run(FLAGS.num_episodes)
+  File "/home/neal/Desktop/acme/acme/environment_loop.py", line 140, in run
+    result = self.run_episode()
+  File "/home/neal/Desktop/acme/acme/environment_loop.py", line 90, in run_episode
+    self._actor.update()
+  File "/home/neal/Desktop/acme/acme/agents/tf/dqn/agent.py", line 165, in update
+    super().update()
+  File "/home/neal/Desktop/acme/acme/agents/agent.py", line 87, in update
+    self._learner.step()
+  File "/home/neal/Desktop/acme/acme/agents/tf/dqn/learning.py", line 172, in step
+    result = self._step()
+  File "/home/neal/anaconda3/envs/acme/lib/python3.7/site-packages/tensorflow/python/eager/def_function.py", line 780, in __call__
+    result = self._call(*args, **kwds)
+  File "/home/neal/anaconda3/envs/acme/lib/python3.7/site-packages/tensorflow/python/eager/def_function.py", line 807, in _call
+    return self._stateless_fn(*args, **kwds)  # pylint: disable=not-callable
+  File "/home/neal/anaconda3/envs/acme/lib/python3.7/site-packages/tensorflow/python/eager/function.py", line 2844, in __call__
+    return graph_function._filtered_call(args, kwargs)  # pylint: disable=protected-access
+  File "/home/neal/anaconda3/envs/acme/lib/python3.7/site-packages/tensorflow/python/eager/function.py", line 1847, in _filtered_call
+    cancellation_manager=cancellation_manager)
+  File "/home/neal/anaconda3/envs/acme/lib/python3.7/site-packages/tensorflow/python/eager/function.py", line 1923, in _call_flat
+    ctx, args, cancellation_manager=cancellation_manager))
+  File "/home/neal/anaconda3/envs/acme/lib/python3.7/site-packages/tensorflow/python/eager/function.py", line 550, in call
+    ctx=ctx)
+  File "/home/neal/anaconda3/envs/acme/lib/python3.7/site-packages/tensorflow/python/eager/execute.py", line 60, in quick_execute
+    inputs, attrs, num_outputs)
+KeyboardInterrupt
+[reverb/cc/platform/default/server.cc:64] Shutting down replay server
+W0830 21:17:25.518953 139977387976512 client.py:112] Writer-object deleted without calling .close explicitly.
+[reverb/cc/writer.cc:244] Received error when closing the stream: [14] Socket closed

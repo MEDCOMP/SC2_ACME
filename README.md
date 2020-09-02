@@ -77,7 +77,7 @@ novel implementation.
 
 ### Install in an editable mode:
 ```bash
-git clone https://github.com/deepmind/acme.git
+git clone https://github.com/AthinkingNeal/SC2-ACME.git
 cd acme
 conda create --name acme python=3.7
 conda activate acme
