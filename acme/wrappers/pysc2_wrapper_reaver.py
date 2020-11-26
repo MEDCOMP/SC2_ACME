@@ -247,22 +247,17 @@ class ActionWrapper:
                 # pysc2 expects all args in their separate list
                 if type(arg) not in [list, tuple]:
                     arg = [arg]
+                    
                 # pysc2 expects spatial coords, but we have flattened => attempt to fix
-                # In random agent the spatial coordinates are not flattened.
-                if len(arg_type.sizes) > 1 and len(arg) == 1:
-                    arg = [arg[0] % self.spatial_dim,
-                           arg[0] // self.spatial_dim]
+                # In random agent under the spatial coordinates are not flattened.
+                # if len(arg_type.sizes) > 1 and len(arg) == 1:
+                #     arg = [arg[0] % self.spatial_dim,
+                #            arg[0] // self.spatial_dim]
+
                 args.append(arg)
             else:
                 arg = [default[arg_name]]
                 args.append(arg)
-            print("arg_name is " + str(arg_name))
-            print("arg is " + str(arg))        
-
-        print("fn_id_idx is " + str(fn_id_idx))
-        print("fn_id is " + str(fn_id))
-        print ("fn name is " + str(actions.FUNCTIONS[fn_id].name))
-        print("args is " + str(args))
 
         return [actions.FunctionCall(fn_id, args)]
 

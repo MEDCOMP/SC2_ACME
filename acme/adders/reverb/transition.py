@@ -21,16 +21,20 @@ into a single transition, simplifying to a simple transition adder when N=1.
 
 import copy
 import itertools
-from typing import Optional
+from typing import Optional,Union
 
 from acme import specs
 from acme import types
+from acme import sc2_spec
+from acme import sc2_types
 from acme.adders.reverb import base
 from acme.adders.reverb import utils
 
 import numpy as np
 import reverb
+from reverb import reverb_types
 import tree
+import tensorflow as tf
 
 
 class NStepTransitionAdder(base.ReverbAdder):
@@ -202,7 +206,8 @@ class SC2NStepTransitionAdder(base.ReverbAdder):
 
   Notes:
     - The only different part from NStepTransitionAdder above is the signature classmethod
-      Because the original one assumes the observation spec is only a single Array 
+      Because the original one assumes simple environment.
+      For example, the observation spec is assumed to be only a single Array 
       with attribute shape and dtype but SCII has multiple arrays in the observation spec.
 
   """
@@ -294,21 +299,39 @@ class SC2NStepTransitionAdder(base.ReverbAdder):
       self._write()
       self._buffer.popleft()
 
-  # @classmethod
-  # TODO write siganature function for StarCraft II
-  # def signature(cls,
-  #               environment_spec: specs.EnvironmentSpec,
-  #               extras_spec: types.NestedSpec = ()):
-  #   transition_spec = [
-  #       environment_spec.observations,
-  #       environment_spec.actions,
-  #       environment_spec.rewards,
-  #       environment_spec.discounts,
-  #       environment_spec.observations,  # next_observation
-  #   ]
+  @classmethod
+  def signature(cls,
+                environment_spec: specs.EnvironmentSpec,
+  ):
+    transition_spec = [
+        environment_spec.observations,
+        environment_spec.actions,
+        environment_spec.rewards,
+        environment_spec.discounts,
+        environment_spec.observations,  # next_observation
+    ]
 
-  #   if extras_spec:
-  #     transition_spec.append(extras_spec)
+    print(tree.map_structure(spec_like_to_spec_nest,
+                              tuple(transition_spec)))
 
-  #   return tree.map_structure_with_path(base.spec_like_to_tensor_spec,
-  #                                       tuple(transition_spec))
+    return tree.map_structure(spec_like_to_spec_nest,
+                              tuple(transition_spec))
+
+def spec_like_to_spec_nest(spec: Union[sc2_spec.Spec, sc2_types.Space]) -> reverb_types.SpecNest:
+  if isinstance(spec, sc2_types.Space):
+    return tf.TensorSpec.from_spec(spec, name=spec.name)
+
+  elif isinstance(spec,sc2_spec.Spec):
+    # Create the Nested Spec to return
+    spec_nest = {}
+
+    spec_type = spec.name
+    # convert the space in spec to TensorSpec and store them in a list
+    spec_content = [spec_like_to_spec_nest(space) for space in spec]
+
+    spec_nest[spec_type] = spec_content
+    return spec_nest
+  
+  else:
+    raise ValueError(f'Unsupported spec: {spec}')
+    

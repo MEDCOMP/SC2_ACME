@@ -37,7 +37,7 @@ class SC2RandomActor(core.Actor):
           remover=reverb.selectors.Fifo(),
           max_size=max_replay_size,
           rate_limiter=reverb.rate_limiters.MinSize(1),
-          # TODO signature=reverb_adders.SC2NStepTransitionAdder.signature(spec)
+          signature=reverb_adders.SC2NStepTransitionAdder.signature(spec)
           )
       self._server = reverb.Server([replay_table], port=None)
 
@@ -77,13 +77,11 @@ class SC2RandomActor(core.Actor):
       return [function_id] + args
 
   def observe_first(self, timestep: dm_env.TimeStep):
-    # @TODO allow the adder to store the experience
     if self._adder:
       self._adder.add_first(timestep)
     
 
   def observe(self, action, next_timestep: dm_env.TimeStep):
-    # @TODO allow the adder to store the experience
     if self._adder:
       self._adder.add(action, next_timestep)
 

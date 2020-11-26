@@ -1,19 +1,19 @@
-2020-11-25 19:36:04.581076: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
-I1125 19:36:06.052298 140691955164992 sc_process.py:135] Launching SC2: /home/neal/StarCraftII/Versions/Base75689/SC2_x64 -listen 127.0.0.1 -port 17126 -dataDir /home/neal/StarCraftII/ -tempDir /tmp/sc-cra33ozf/
-I1125 19:36:06.056707 140691955164992 remote_controller.py:167] Connecting to: ws://127.0.0.1:17126/sc2api, attempt: 0, running: True
+2020-11-26 16:43:03.191750: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+I1126 16:43:04.255366 139862431545152 sc_process.py:135] Launching SC2: /home/neal/StarCraftII/Versions/Base75689/SC2_x64 -listen 127.0.0.1 -port 24003 -dataDir /home/neal/StarCraftII/ -tempDir /tmp/sc-a7sylw6d/
+I1126 16:43:04.261369 139862431545152 remote_controller.py:167] Connecting to: ws://127.0.0.1:24003/sc2api, attempt: 0, running: True
 Version: B75689 (SC2.4.10)
 Build: Aug 12 2019 17:16:57
-Command Line: '"/home/neal/StarCraftII/Versions/Base75689/SC2_x64" -listen 127.0.0.1 -port 17126 -dataDir /home/neal/StarCraftII/ -tempDir /tmp/sc-cra33ozf/'
+Command Line: '"/home/neal/StarCraftII/Versions/Base75689/SC2_x64" -listen 127.0.0.1 -port 24003 -dataDir /home/neal/StarCraftII/ -tempDir /tmp/sc-a7sylw6d/'
 Starting up...
 Startup Phase 1 complete
-I1125 19:36:07.058667 140691955164992 remote_controller.py:167] Connecting to: ws://127.0.0.1:17126/sc2api, attempt: 1, running: True
+I1126 16:43:05.263115 139862431545152 remote_controller.py:167] Connecting to: ws://127.0.0.1:24003/sc2api, attempt: 1, running: True
 Startup Phase 2 complete
 Creating stub renderer...
-Listening on: 127.0.0.1:17126
+Listening on: 127.0.0.1:24003
 Startup Phase 3 complete. Ready for commands.
-I1125 19:36:08.060794 140691955164992 remote_controller.py:167] Connecting to: ws://127.0.0.1:17126/sc2api, attempt: 2, running: True
-ConnectHandler: Request from 127.0.0.1:39386 accepted
-ReadyHandler: 127.0.0.1:39386 ready
+I1126 16:43:06.265261 139862431545152 remote_controller.py:167] Connecting to: ws://127.0.0.1:24003/sc2api, attempt: 2, running: True
+ConnectHandler: Request from 127.0.0.1:49606 accepted
+ReadyHandler: 127.0.0.1:49606 ready
 Requesting to join a single player game
 Configuring interface options
 Configure: raw interface disabled
@@ -32,7 +32,12 @@ Game has started.
 Using default stable ids, none found at: /home/neal/StarCraftII/stableid.json
 Successfully loaded stable ids: GameData\stableid.json
 Sending ResponseJoinGame
-I1125 19:36:11.390280 140691955164992 sc2_env.py:316] Environment is ready
+I1126 16:43:09.463125 139862431545152 sc2_env.py:316] Environment is ready
+[reverb/cc/platform/tfrecord_checkpointer.cc:143] Initializing TFRecordCheckpointer in /tmp/tmpzl75p1p_
+[reverb/cc/platform/tfrecord_checkpointer.cc:320] Loading latest checkpoint from /tmp/tmpzl75p1p_
+[reverb/cc/platform/default/server.cc:55] Started replay server on port 20228
+I1126 16:43:09.512406 139862431545152 csv.py:42] Logging to environment_loop/6561014e-2fc3-11eb-a86f-5c80b69e6231/logs/logs.csv
+I1126 16:43:09.512542 139862431545152 sc2_env.py:509] Starting episode 1: [terran] on MoveToBeacon
 Traceback (most recent call last):
   File "run_random.py", line 59, in <module>
     app.run(main)
@@ -40,27 +45,29 @@ Traceback (most recent call last):
     _run_main(main, args)
   File "/home/neal/anaconda3/envs/acme/lib/python3.7/site-packages/absl/app.py", line 251, in _run_main
     sys.exit(main(argv))
-  File "run_random.py", line 53, in main
-    agent = random_actor.SC2RandomActor(env_spec)
-  File "/home/neal/Desktop/acme/acme/agents/StarCraft2/random_actor.py", line 40, in __init__
-    signature=reverb_adders.NStepTransitionAdder.signature(spec))
-  File "/home/neal/Desktop/acme/acme/adders/reverb/transition.py", line 190, in signature
-    tuple(transition_spec))
-  File "/home/neal/anaconda3/envs/acme/lib/python3.7/site-packages/tree/__init__.py", line 556, in map_structure_with_path
-    **kwargs)
-  File "/home/neal/anaconda3/envs/acme/lib/python3.7/site-packages/tree/__init__.py", line 858, in map_structure_with_path_up_to
-    [func(*args) for args in zip(flat_path_list, *flat_value_lists)])
-  File "/home/neal/anaconda3/envs/acme/lib/python3.7/site-packages/tree/__init__.py", line 858, in <listcomp>
-    [func(*args) for args in zip(flat_path_list, *flat_value_lists)])
-  File "/home/neal/Desktop/acme/acme/adders/reverb/base.py", line 59, in spec_like_to_tensor_spec
-    return tf.TensorSpec.from_spec(spec, name='/'.join(str(p) for p in paths))
-  File "/home/neal/anaconda3/envs/acme/lib/python3.7/site-packages/tensorflow/python/framework/tensor_spec.py", line 61, in from_spec
-    return cls(spec.shape, spec.dtype, name or spec.name)
-AttributeError: 'Spec' object has no attribute 'shape'
-I1125 19:36:11.510277 140691955164992 sc2_env.py:754] Environment Close
+  File "run_random.py", line 56, in main
+    loop.run(FLAGS.num_episodes)
+  File "/home/neal/Desktop/acme/acme/environment_loop.py", line 140, in run
+    result = self.run_episode()
+  File "/home/neal/Desktop/acme/acme/environment_loop.py", line 89, in run_episode
+    self._actor.observe(action, next_timestep=timestep)
+  File "/home/neal/Desktop/acme/acme/agents/StarCraft2/random_actor.py", line 86, in observe
+    self._adder.add(action, next_timestep)
+  File "/home/neal/Desktop/acme/acme/adders/reverb/base.py", line 171, in add
+    self._write()
+  File "/home/neal/Desktop/acme/acme/adders/reverb/transition.py", line 293, in _write
+    table=table, num_timesteps=1, priority=priority)
+  File "/home/neal/anaconda3/envs/acme/lib/python3.7/site-packages/reverb/client.py", line 175, in create_item
+    self._writer.CreateItem(table, num_timesteps, priority)
+ValueError: Unable to CreateItem to table priority_table because Append was called with a tensor signature inconsistent with table signature.  Append for timestep offset 0 was called with 24 tensors, but table requires 22 tensors per entry.  Table signature: 0: Tensor<name: 'screen{player_relative, selected, visibility_map, unit_hit_points_ratio, unit_density}', dtype: int32, shape: [5,16,16]>, 1: Tensor<name: 'minimap{player_relative, selected, visibility_map, camera}', dtype: int32, shape: [4,16,16]>, 2: Tensor<name: 'available_actions', dtype: int32, shape: [25]>, 3: Tensor<name: 'player', dtype: int32, shape: [11]>, 4: Tensor<name: 'function_id', dtype: int32, shape: []>, 5: Tensor<name: 'screen', dtype: int32, shape: [16,16]>, 6: Tensor<name: 'minimap', dtype: int32, shape: [16,16]>, 7: Tensor<name: 'screen2', dtype: int32, shape: [16,16]>, 8: Tensor<name: 'queued', dtype: int32, shape: [2]>, 9: Tensor<name: 'control_group_act', dtype: int32, shape: [5]>, 10: Tensor<name: 'control_group_id', dtype: int32, shape: [10]>, 11: Tensor<name: 'select_add', dtype: int32, shape: [2]>, 12: Tensor<name: 'select_point_act', dtype: int32, shape: [4]>, 13: Tensor<name: 'select_unit_act', dtype: int32, shape: [4]>, 14: Tensor<name: 'select_worker', dtype: int32, shape: [4]>, 15: Tensor<name: 'build_queue_id', dtype: int32, shape: [10]>, 16: Tensor<name: 'reward', dtype: float, shape: []>, 17: Tensor<name: 'discount', dtype: float, shape: []>, 18: Tensor<name: 'screen{player_relative, selected, visibility_map, unit_hit_points_ratio, unit_density}', dtype: int32, shape: [5,16,16]>, 19: Tensor<name: 'minimap{player_relative, selected, visibility_map, camera}', dtype: int32, shape: [4,16,16]>, 20: Tensor<name: 'available_actions', dtype: int32, shape: [25]>, 21: Tensor<name: 'player', dtype: int32, shape: [11]>
+I1126 16:43:09.616946 139862431545152 sc2_env.py:754] Environment Close
+DataHandler: unable to parse websocket frame.
 RequestQuit command received.
 Closing Application...
-DataHandler: unable to parse websocket frame.
-CloseHandler: 127.0.0.1:39386 disconnected
-I1125 19:36:11.611839 140691955164992 sc_process.py:232] Shutdown gracefully.
-I1125 19:36:11.612170 140691955164992 sc_process.py:210] Shutdown with return code: -15
+CloseHandler: 127.0.0.1:49606 disconnected
+ResponseThread: No connection, dropping the response.
+I1126 16:43:09.717958 139862431545152 sc_process.py:232] Shutdown gracefully.
+I1126 16:43:09.718303 139862431545152 sc_process.py:210] Shutdown with return code: -15
+[reverb/cc/platform/default/server.cc:64] Shutting down replay server
+W1126 16:43:14.723795 139862431545152 client.py:112] Writer-object deleted without calling .close explicitly.
+[reverb/cc/writer.cc:244] Received error when closing the stream: [14] Socket closed
