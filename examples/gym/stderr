@@ -1,0 +1,103 @@
+2020-09-12 17:35:16.198677: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+2020-09-12 17:35:17.520977: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcuda.so.1
+2020-09-12 17:35:17.568687: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:982] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-09-12 17:35:17.569289: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: GeForce RTX 2080 with Max-Q Design computeCapability: 7.5
+coreClock: 1.23GHz coreCount: 46 deviceMemorySize: 7.79GiB deviceMemoryBandwidth: 357.69GiB/s
+2020-09-12 17:35:17.569328: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+2020-09-12 17:35:17.571003: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcublas.so.10
+2020-09-12 17:35:17.572531: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcufft.so.10
+2020-09-12 17:35:17.572796: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcurand.so.10
+2020-09-12 17:35:17.574295: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusolver.so.10
+2020-09-12 17:35:17.575189: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusparse.so.10
+2020-09-12 17:35:17.578212: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudnn.so.7
+2020-09-12 17:35:17.578324: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:982] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-09-12 17:35:17.578699: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:982] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-09-12 17:35:17.578992: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1858] Adding visible gpu devices: 0
+2020-09-12 17:35:17.579269: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN)to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2020-09-12 17:35:17.584716: I tensorflow/core/platform/profile_utils/cpu_utils.cc:104] CPU Frequency: 2400000000 Hz
+2020-09-12 17:35:17.585120: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x557331f82030 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-09-12 17:35:17.585144: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2020-09-12 17:35:17.631850: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:982] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-09-12 17:35:17.632160: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x557331f4dee0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2020-09-12 17:35:17.632180: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): GeForce RTX 2080 with Max-Q Design, Compute Capability 7.5
+2020-09-12 17:35:17.632323: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:982] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-09-12 17:35:17.632594: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: GeForce RTX 2080 with Max-Q Design computeCapability: 7.5
+coreClock: 1.23GHz coreCount: 46 deviceMemorySize: 7.79GiB deviceMemoryBandwidth: 357.69GiB/s
+2020-09-12 17:35:17.632622: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+2020-09-12 17:35:17.632647: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcublas.so.10
+2020-09-12 17:35:17.632661: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcufft.so.10
+2020-09-12 17:35:17.632676: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcurand.so.10
+2020-09-12 17:35:17.632689: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusolver.so.10
+2020-09-12 17:35:17.632701: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusparse.so.10
+2020-09-12 17:35:17.632714: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudnn.so.7
+2020-09-12 17:35:17.632754: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:982] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-09-12 17:35:17.633022: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:982] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-09-12 17:35:17.633219: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1858] Adding visible gpu devices: 0
+2020-09-12 17:35:17.633239: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+2020-09-12 17:35:17.932651: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1257] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-09-12 17:35:17.932686: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1263]      0 
+2020-09-12 17:35:17.932694: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1276] 0:   N 
+2020-09-12 17:35:17.932844: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:982] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-09-12 17:35:17.933120: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:982] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-09-12 17:35:17.933339: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1402] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 6347 MB memory) -> physical GPU (device: 0, name: GeForce RTX 2080 with Max-Q Design, pci bus id: 0000:01:00.0, compute capability: 7.5)
+[reverb/cc/platform/tfrecord_checkpointer.cc:143] Initializing TFRecordCheckpointer in /tmp/tmpnwvvbc2u
+[reverb/cc/platform/tfrecord_checkpointer.cc:320] Loading latest checkpoint from /tmp/tmpnwvvbc2u
+[reverb/cc/platform/default/server.cc:55] Started replay server on port 24950
+WARNING:tensorflow:Entity <function _yield_value at 0x7f16914d9c20> appears to be a generator function. It will not be converted by AutoGraph.
+W0912 17:35:18.533358 139735647303488 ag_logging.py:146] Entity <function _yield_value at 0x7f16914d9c20> appears to be a generator function. It will not be converted by AutoGraph.
+2020-09-12 17:35:18.754208: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcublas.so.10
+I0912 17:35:18.935800 139735647303488 csv.py:42] Logging to learner/43cbb132-f4db-11ea-8bdd-5c80b69e6231/logs/logs.csv
+2020-09-12 17:35:18.944976: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:118] None of the MLIR optimization passes are enabled (registered 1)
+2020-09-12 17:35:18.953237: W tensorflow/python/util/util.cc:348] Sets are not currently considered sequences, but this may change in the future, so consider avoiding using them.
+I0912 17:35:18.956618 139735647303488 savers.py:166] Attempting to restoring checkpoint: None
+I0912 17:35:20.213833 139735647303488 csv.py:42] Logging to train_loop/43cbb132-f4db-11ea-8bdd-5c80b69e6231/logs/logs.csv
+I0912 17:35:20.215070 139735647303488 csv.py:42] Logging to eval_loop/43cbb132-f4db-11ea-8bdd-5c80b69e6231/logs/logs.csv
+2020-09-12 17:35:20.352525: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:118] None of the MLIR optimization passes are enabled (registered 1)
+WARNING:tensorflow:Calling GradientTape.gradient on a persistent tape inside its context is significantly less efficient than calling it outside the context (it causes the gradient ops to be recorded on the tape, leading to increased CPU and memory usage). Only call GradientTape.gradient inside the context if you actually want to trace the gradient in order to compute higher order derivatives.
+W0912 17:35:21.915488 139735647303488 backprop.py:1039] Calling GradientTape.gradient on a persistent tape inside its context is significantly less efficient than calling it outside the context (it causes the gradient ops to be recorded on the tape, leading to increased CPU and memory usage). Only call GradientTape.gradient inside the context if you actually want to trace the gradient in order to compute higher order derivatives.
+2020-09-12 17:35:23.138050: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:118] None of the MLIR optimization passes are enabled (registered 1)
+2020-09-12 17:35:23.843872: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:118] None of the MLIR optimization passes are enabled (registered 1)
+I0912 17:35:26.142530 139735647303488 savers.py:156] Saving checkpoint: /home/neal/acme/43cbb132-f4db-11ea-8bdd-5c80b69e6231/checkpoints/d4pg_learner
+2020-09-12 17:35:26.305692: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:118] None of the MLIR optimization passes are enabled (registered 1)
+INFO:tensorflow:Assets written to: /home/neal/acme/43cbb132-f4db-11ea-8bdd-5c80b69e6231/snapshots/policy/assets
+I0912 17:35:26.459154 139735647303488 builder_impl.py:775] Assets written to: /home/neal/acme/43cbb132-f4db-11ea-8bdd-5c80b69e6231/snapshots/policy/assets
+INFO:tensorflow:Assets written to: /home/neal/acme/43cbb132-f4db-11ea-8bdd-5c80b69e6231/snapshots/critic/assets
+I0912 17:35:26.568828 139735647303488 builder_impl.py:775] Assets written to: /home/neal/acme/43cbb132-f4db-11ea-8bdd-5c80b69e6231/snapshots/critic/assets
+Traceback (most recent call last):
+  File "run_d4pg.py", line 135, in <module>
+    app.run(main)
+  File "/home/neal/anaconda3/envs/acme/lib/python3.7/site-packages/absl/app.py", line 300, in run
+    _run_main(main, args)
+  File "/home/neal/anaconda3/envs/acme/lib/python3.7/site-packages/absl/app.py", line 251, in _run_main
+    sys.exit(main(argv))
+  File "run_d4pg.py", line 130, in main
+    train_loop.run(num_episodes=FLAGS.num_episodes_per_eval)
+  File "/home/neal/Desktop/acme/acme/environment_loop.py", line 140, in run
+    result = self.run_episode()
+  File "/home/neal/Desktop/acme/acme/environment_loop.py", line 90, in run_episode
+    self._actor.update()
+  File "/home/neal/Desktop/acme/acme/agents/agent.py", line 87, in update
+    self._learner.step()
+  File "/home/neal/Desktop/acme/acme/agents/tf/d4pg/learning.py", line 251, in step
+    fetches = self._step()
+  File "/home/neal/anaconda3/envs/acme/lib/python3.7/site-packages/tensorflow/python/eager/def_function.py", line 780, in __call__
+    result = self._call(*args, **kwds)
+  File "/home/neal/anaconda3/envs/acme/lib/python3.7/site-packages/tensorflow/python/eager/def_function.py", line 807, in _call
+    return self._stateless_fn(*args, **kwds)  # pylint: disable=not-callable
+  File "/home/neal/anaconda3/envs/acme/lib/python3.7/site-packages/tensorflow/python/eager/function.py", line 2844, in __call__
+    return graph_function._filtered_call(args, kwargs)  # pylint: disable=protected-access
+  File "/home/neal/anaconda3/envs/acme/lib/python3.7/site-packages/tensorflow/python/eager/function.py", line 1847, in _filtered_call
+    cancellation_manager=cancellation_manager)
+  File "/home/neal/anaconda3/envs/acme/lib/python3.7/site-packages/tensorflow/python/eager/function.py", line 1923, in _call_flat
+    ctx, args, cancellation_manager=cancellation_manager))
+  File "/home/neal/anaconda3/envs/acme/lib/python3.7/site-packages/tensorflow/python/eager/function.py", line 550, in call
+    ctx=ctx)
+  File "/home/neal/anaconda3/envs/acme/lib/python3.7/site-packages/tensorflow/python/eager/execute.py", line 60, in quick_execute
+    inputs, attrs, num_outputs)
+KeyboardInterrupt
+[reverb/cc/platform/default/server.cc:64] Shutting down replay server
+W0912 17:35:41.903227 139735647303488 client.py:112] Writer-object deleted without calling .close explicitly.
+[reverb/cc/writer.cc:244] Received error when closing the stream: [14] Socket closed

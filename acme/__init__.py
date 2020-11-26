@@ -18,6 +18,8 @@
 # Expose specs and types modules.
 from acme import specs
 from acme import types
+from acme import sc2_spec
+from acme import sc2_types
 
 # Make __version__ accessible.
 from acme._metadata import __version__

@@ -53,6 +53,9 @@ def make_environment(evaluation: bool = False) -> dm_env.Environment:
 def main(_):
   env = make_environment()
   env_spec = acme.make_environment_spec(env)
+  # print("observation spec is: ")
+  # print(env_spec.observations)
+  # print(env_spec.observations.shape)
   network = networks.DQNAtariNetwork(env_spec.actions.num_values)
 
   agent = dqn.DQN(env_spec, network)

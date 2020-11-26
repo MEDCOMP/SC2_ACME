@@ -18,6 +18,7 @@
 import unittest
 from absl.testing import absltest
 from dm_env import specs
+from acme import types
 import numpy as np
 
 SKIP_GYM_TESTS = False
@@ -40,6 +41,7 @@ class GymWrapperTest(absltest.TestCase):
     # Test converted observation spec.
     observation_spec: specs.BoundedArray = env.observation_spec()
     self.assertEqual(type(observation_spec), specs.BoundedArray)
+    #self.assertEqual(type(observation_spec), types.NestedSpec)
     self.assertEqual(observation_spec.shape, (4,))
     self.assertEqual(observation_spec.minimum.shape, (4,))
     self.assertEqual(observation_spec.maximum.shape, (4,))

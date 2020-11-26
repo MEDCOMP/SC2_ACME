@@ -51,6 +51,9 @@ class GymWrapper(dm_env.Environment):
 
   def step(self, action: types.NestedArray) -> dm_env.TimeStep:
     """Steps the environment."""
+    print(type(action))
+    print(action)
+
     if self._reset_next_step:
       return self.reset()
 

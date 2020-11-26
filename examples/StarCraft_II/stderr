@@ -1,0 +1,66 @@
+2020-11-25 19:36:04.581076: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+I1125 19:36:06.052298 140691955164992 sc_process.py:135] Launching SC2: /home/neal/StarCraftII/Versions/Base75689/SC2_x64 -listen 127.0.0.1 -port 17126 -dataDir /home/neal/StarCraftII/ -tempDir /tmp/sc-cra33ozf/
+I1125 19:36:06.056707 140691955164992 remote_controller.py:167] Connecting to: ws://127.0.0.1:17126/sc2api, attempt: 0, running: True
+Version: B75689 (SC2.4.10)
+Build: Aug 12 2019 17:16:57
+Command Line: '"/home/neal/StarCraftII/Versions/Base75689/SC2_x64" -listen 127.0.0.1 -port 17126 -dataDir /home/neal/StarCraftII/ -tempDir /tmp/sc-cra33ozf/'
+Starting up...
+Startup Phase 1 complete
+I1125 19:36:07.058667 140691955164992 remote_controller.py:167] Connecting to: ws://127.0.0.1:17126/sc2api, attempt: 1, running: True
+Startup Phase 2 complete
+Creating stub renderer...
+Listening on: 127.0.0.1:17126
+Startup Phase 3 complete. Ready for commands.
+I1125 19:36:08.060794 140691955164992 remote_controller.py:167] Connecting to: ws://127.0.0.1:17126/sc2api, attempt: 2, running: True
+ConnectHandler: Request from 127.0.0.1:39386 accepted
+ReadyHandler: 127.0.0.1:39386 ready
+Requesting to join a single player game
+Configuring interface options
+Configure: raw interface disabled
+Configure: feature layer interface enabled
+Configure: score interface enabled
+Configure: render interface disabled
+Launching next game.
+Next launch phase started: 2
+Next launch phase started: 3
+Next launch phase started: 4
+Next launch phase started: 5
+Next launch phase started: 6
+Next launch phase started: 7
+Next launch phase started: 8
+Game has started.
+Using default stable ids, none found at: /home/neal/StarCraftII/stableid.json
+Successfully loaded stable ids: GameData\stableid.json
+Sending ResponseJoinGame
+I1125 19:36:11.390280 140691955164992 sc2_env.py:316] Environment is ready
+Traceback (most recent call last):
+  File "run_random.py", line 59, in <module>
+    app.run(main)
+  File "/home/neal/anaconda3/envs/acme/lib/python3.7/site-packages/absl/app.py", line 300, in run
+    _run_main(main, args)
+  File "/home/neal/anaconda3/envs/acme/lib/python3.7/site-packages/absl/app.py", line 251, in _run_main
+    sys.exit(main(argv))
+  File "run_random.py", line 53, in main
+    agent = random_actor.SC2RandomActor(env_spec)
+  File "/home/neal/Desktop/acme/acme/agents/StarCraft2/random_actor.py", line 40, in __init__
+    signature=reverb_adders.NStepTransitionAdder.signature(spec))
+  File "/home/neal/Desktop/acme/acme/adders/reverb/transition.py", line 190, in signature
+    tuple(transition_spec))
+  File "/home/neal/anaconda3/envs/acme/lib/python3.7/site-packages/tree/__init__.py", line 556, in map_structure_with_path
+    **kwargs)
+  File "/home/neal/anaconda3/envs/acme/lib/python3.7/site-packages/tree/__init__.py", line 858, in map_structure_with_path_up_to
+    [func(*args) for args in zip(flat_path_list, *flat_value_lists)])
+  File "/home/neal/anaconda3/envs/acme/lib/python3.7/site-packages/tree/__init__.py", line 858, in <listcomp>
+    [func(*args) for args in zip(flat_path_list, *flat_value_lists)])
+  File "/home/neal/Desktop/acme/acme/adders/reverb/base.py", line 59, in spec_like_to_tensor_spec
+    return tf.TensorSpec.from_spec(spec, name='/'.join(str(p) for p in paths))
+  File "/home/neal/anaconda3/envs/acme/lib/python3.7/site-packages/tensorflow/python/framework/tensor_spec.py", line 61, in from_spec
+    return cls(spec.shape, spec.dtype, name or spec.name)
+AttributeError: 'Spec' object has no attribute 'shape'
+I1125 19:36:11.510277 140691955164992 sc2_env.py:754] Environment Close
+RequestQuit command received.
+Closing Application...
+DataHandler: unable to parse websocket frame.
+CloseHandler: 127.0.0.1:39386 disconnected
+I1125 19:36:11.611839 140691955164992 sc_process.py:232] Shutdown gracefully.
+I1125 19:36:11.612170 140691955164992 sc_process.py:210] Shutdown with return code: -15

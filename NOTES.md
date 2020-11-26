@@ -11,6 +11,7 @@ pip install -e .[envs]
 pip install -e .[jax]
 pip install .[testing]
 pip install gym[atari]
+pip install pysc2
 ```
 
 Compatible CUDA Version: 10.2

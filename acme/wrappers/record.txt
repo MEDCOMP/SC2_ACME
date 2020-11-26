@@ -1,0 +1,53 @@
+pygame 1.9.6
+Hello from the pygame community. https://www.pygame.org/contribute.html
+{'action_result': (0,), 'alerts': (0,), 'build_queue': (0, 7), 'cargo': (0, 7), 'cargo_slots_available': (1,), 'control_groups': (10, 2), 'game_loop': (1,), 'last_actions': (0,), 'map_name': (0,), 
+'multi_select': (0, 7), 'player': (11,), 'production_queue': (0, 2), 
+'score_cumulative': (13,), 'score_by_category': (11, 5), 'score_by_vital': (3, 3), 'single_select': (0, 7), 'available_actions': (0,), 'feature_screen': (27, 16, 16), 'feature_minimap': (11, 16, 16),
+'upgrades': (0,), 'home_race_requested': (1,), 'away_race_requested': (1,)}
+ValidActions(types=Arguments(screen=ArgumentType(id=0, name='screen', sizes=(16, 16), fn=None, values=None, count=None), 
+minimap=ArgumentType(id=1, name='minimap', sizes=(16, 16), fn=None, values=None, count=None), screen2=ArgumentType(id=2, name='screen2', sizes=(16, 16), fn=None, values=None, count=None), queued=ArgumentType(id=3, name='queued', sizes=(2,), fn=None, values=None, count=None), control_group_act=ArgumentType(id=4, name='control_group_act', sizes=(5,), fn=None, values=None, count=None), control_group_id=ArgumentType(id=5, name='control_group_id', sizes=(10,), fn=None, values=None, count=None), select_point_act=ArgumentType(id=6, name='select_point_act', sizes=(4,), fn=None, values=None, count=None), select_add=ArgumentType(id=7, name='select_add', sizes=(2,), fn=None, values=None, count=None), select_unit_act=ArgumentType(id=8, name='select_unit_act', sizes=(4,), fn=None, values=None, count=None), select_unit_id=ArgumentType(id=9, name='select_unit_id', sizes=(500,), fn=None, values=None, count=None), select_worker=ArgumentType(id=10, name='select_worker', sizes=(4,), fn=None, values=None, count=None), build_queue_id=ArgumentType(id=11, name='build_queue_id', sizes=(10,), fn=None, values=None, count=None), unload_id=ArgumentType(id=12, name='unload_id', sizes=(500,), fn=None, values=None, count=None)), functions=<pysc2.lib.actions.Functions object at 0x7fb921bbca10>)
+r=('127.0.0.1', 60520)>
+
+
+<class 'pysc2.lib.actions.ValidActions'>
+Arguments(screen=ArgumentType(id=0, name='screen', sizes=(16, 16), fn=None, values=None, count=None), minimap=ArgumentType(id=1, name='minimap', sizes=(16, 16), fn=None, values=None, count=None), screen2=ArgumentType(id=2, name='screen2', sizes=(16, 16), fn=None, values=None, count=None), queued=ArgumentType(id=3, name='queued', sizes=(2,), fn=None, values=None, count=None), control_group_act=ArgumentType(id=4, name='control_group_act', sizes=(5,), fn=None, values=None, count=None), control_group_id=ArgumentType(id=5, name='control_group_id', sizes=(10,), fn=None, values=None, count=None), select_point_act=ArgumentType(id=6, name='select_point_act', sizes=(4,), fn=None, values=None, count=None), select_add=ArgumentType(id=7, name='select_add', sizes=(2,), fn=None, values=None, count=None), select_unit_act=ArgumentType(id=8, name='select_unit_act', sizes=(4,), fn=None, values=None, count=None), select_unit_id=ArgumentType(id=9, name='select_unit_id', sizes=(500,), fn=None, values=None, count=None), select_worker=ArgumentType(id=10, name='select_worker', sizes=(4,), fn=None, values=None, count=None), build_queue_id=ArgumentType(id=11, name='build_queue_id', sizes=(10,), fn=None, values=None, count=None), unload_id=ArgumentType(id=12, name='unload_id', sizes=(500,), fn=None, values=None, count=None))
+<class 'pysc2.lib.actions.Arguments'>
+screen
+0/screen [16, 16]
+<class 'tuple'>
+minimap
+1/minimap [16, 16]
+<class 'tuple'>
+screen2
+2/screen2 [16, 16]
+<class 'tuple'>
+queued
+3/queued [2]
+<class 'tuple'>
+control_group_act
+4/control_group_act [5]
+<class 'tuple'>
+control_group_id
+5/control_group_id [10]
+<class 'tuple'>
+select_point_act
+6/select_point_act [4]
+<class 'tuple'>
+select_add
+7/select_add [2]
+<class 'tuple'>
+select_unit_act
+8/select_unit_act [4]
+<class 'tuple'>
+select_unit_id
+9/select_unit_id [500]
+<class 'tuple'>
+select_worker
+10/select_worker [4]
+<class 'tuple'>
+build_queue_id
+11/build_queue_id [10]
+<class 'tuple'>
+unload_id
+12/unload_id [500]
+<class 'tuple'>

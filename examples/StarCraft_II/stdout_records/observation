@@ -1,0 +1,93 @@
+pygame 1.9.6
+Hello from the pygame community. https://www.pygame.org/contribute.html
+Observation is:
+[NamedNumpyArray([[[  0,   0,   0, ...,   0,   0,   0],
+                  [  0,   0,   0, ...,   3,   3,   0],
+                  [  0,   0,   0, ...,   3,   3,   0],
+                  ...,
+                  [  0,   0,   0, ...,   0,   0,   0],
+                  [  0,   0,   0, ...,   0,   0,   0],
+                  [  0,   0,   0, ...,   0,   0,   0]],
+
+                 [[  0,   0,   0, ...,   0,   0,   0],
+                  [  0,   0,   0, ...,   0,   0,   0],
+                  [  0,   0,   0, ...,   0,   0,   0],
+                  ...,
+                  [  0,   0,   0, ...,   0,   0,   0],
+                  [  0,   0,   0, ...,   0,   0,   0],
+                  [  0,   0,   0, ...,   0,   0,   0]],
+
+                 [[  0,   0,   0, ...,   0,   0,   0],
+                  [  0,   2,   2, ...,   2,   2,   0],
+                  [  0,   2,   2, ...,   2,   2,   0],
+                  ...,
+                  [  0,   0,   0, ...,   0,   0,   0],
+                  [  0,   0,   0, ...,   0,   0,   0],
+                  [  0,   0,   0, ...,   0,   0,   0]],
+
+                 [[  0,   0,   0, ...,   0,   0,   0],
+                  [  0,   0,   0, ..., 255, 255,   0],
+                  [  0,   0,   0, ..., 255, 255,   0],
+                  ...,
+                  [  0,   0,   0, ...,   0,   0,   0],
+                  [  0,   0,   0, ...,   0,   0,   0],
+                  [  0,   0,   0, ...,   0,   0,   0]],
+
+                 [[  0,   0,   0, ...,   0,   0,   0],
+                  [  0,   0,   0, ...,   2,   2,   0],
+                  [  0,   0,   0, ...,   2,   2,   0],
+                  ...,
+                  [  0,   0,   0, ...,   0,   0,   0],
+                  [  0,   0,   0, ...,   0,   0,   0],
+                  [  0,   0,   0, ...,   0,   0,   0]]], [['player_relative', 'selected', 'visibility_map', 'unit_hit_points_ratio', 'unit_density'], None, None], dtype=int32), NamedNumpyArray([[[0, 0, 0, ..., 0, 0, 0],
+                  [0, 0, 0, ..., 0, 0, 0],
+                  [0, 0, 0, ..., 0, 0, 0],
+                  ...,
+                  [0, 0, 0, ..., 0, 0, 0],
+                  [0, 0, 0, ..., 0, 0, 0],
+                  [0, 0, 0, ..., 0, 0, 0]],
+
+                 [[0, 0, 0, ..., 0, 0, 0],
+                  [0, 0, 0, ..., 0, 0, 0],
+                  [0, 0, 0, ..., 0, 0, 0],
+                  ...,
+                  [0, 0, 0, ..., 0, 0, 0],
+                  [0, 0, 0, ..., 0, 0, 0],
+                  [0, 0, 0, ..., 0, 0, 0]],
+
+                 [[0, 0, 0, ..., 0, 0, 0],
+                  [0, 0, 0, ..., 0, 0, 0],
+                  [0, 0, 0, ..., 0, 0, 0],
+                  ...,
+                  [0, 0, 0, ..., 0, 0, 0],
+                  [0, 0, 0, ..., 0, 0, 0],
+                  [0, 0, 0, ..., 0, 0, 0]],
+
+                 [[0, 0, 0, ..., 0, 0, 0],
+                  [0, 0, 0, ..., 0, 0, 0],
+                  [0, 0, 0, ..., 0, 0, 0],
+                  ...,
+                  [0, 0, 0, ..., 0, 0, 0],
+                  [0, 0, 0, ..., 0, 0, 0],
+                  [0, 0, 0, ..., 0, 0, 0]]], [['player_relative', 'selected', 'visibility_map', 'camera'], None, None], dtype=int32), array([1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0], dtype=int32), NamedNumpyArray([1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0], ['player_id', 'minerals', 'vespene', 'food_used', 'food_cap', 'food_army', 'food_workers', 'idle_worker_count', 'army_count', 'warp_gate_count', 'larva_count'], dtype=int32)]
+Observation[2] is:
+[1 1 1 1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+Observation Spec:
+EnvironmentSpec(observations=Spec: Observation
+Space(screen{player_relative, selected, visibility_map, unit_hit_points_ratio, unit_density}, (5, 16, 16), numpy.int32)
+Space(minimap{player_relative, selected, visibility_map, camera}, (4, 16, 16), numpy.int32)
+Space(available_actions, (25,), numpy.int32)
+Space(player, (11,), numpy.int32), actions=Spec: Action
+Space(function_id, (), cat: 25, numpy.int32)
+Space(screen, (), cat: (16, 16), numpy.int32)
+Space(minimap, (), cat: (16, 16), numpy.int32)
+Space(screen2, (), cat: (16, 16), numpy.int32)
+Space(queued, (), cat: 2, numpy.int32)
+Space(control_group_act, (), cat: 5, numpy.int32)
+Space(control_group_id, (), cat: 10, numpy.int32)
+Space(select_add, (), cat: 2, numpy.int32)
+Space(select_point_act, (), cat: 4, numpy.int32)
+Space(select_unit_act, (), cat: 4, numpy.int32)
+Space(select_worker, (), cat: 4, numpy.int32)
+Space(build_queue_id, (), cat: 10, numpy.int32), rewards=Space(reward, (), float), discounts=Space(discount, (), float))

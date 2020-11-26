@@ -1,0 +1,15 @@
+pygame 1.9.6
+Hello from the pygame community. https://www.pygame.org/contribute.html
+Spec: Action
+Space(function_id, (), cat: 25, numpy.int32)
+Space(screen, (), cat: (16, 16), numpy.int32)
+Space(minimap, (), cat: (16, 16), numpy.int32)
+Space(screen2, (), cat: (16, 16), numpy.int32)
+Space(queued, (), cat: 2, numpy.int32)
+Space(control_group_act, (), cat: 5, numpy.int32)
+Space(control_group_id, (), cat: 10, numpy.int32)
+Space(select_add, (), cat: 2, numpy.int32)
+Space(select_point_act, (), cat: 4, numpy.int32)
+Space(select_unit_act, (), cat: 4, numpy.int32)
+Space(select_worker, (), cat: 4, numpy.int32)
+Space(build_queue_id, (), cat: 10, numpy.int32)

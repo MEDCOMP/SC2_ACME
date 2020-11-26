@@ -1,0 +1,75 @@
+pygame 1.9.6
+Hello from the pygame community. https://www.pygame.org/contribute.html
+function_id_agent: 
+1
+args_agent: 
+[15, 7, 13, 0, 12, 9, 1, 2, 2, 0, 0, 0, 2, 8]
+[1, 15, 7, 13, 0, 12, 9, 1, 2, 2, 0, 0, 0, 2, 8]
+action is
+[1, 15, 7, 13, 0, 12, 9, 1, 2, 2, 0, 0, 0, 2, 8]
+arg_name is minimap
+arg is [7, 1]
+fn_id_idx is 1
+fn_id is 1
+fn name is move_camera
+args is [[7, 1]]
+function_id_agent: 
+6
+args_agent: 
+[8, 6, 2, 14, 8, 6, 1, 1, 3, 0, 2, 3, 0, 0]
+[6, 8, 6, 2, 14, 8, 6, 1, 1, 3, 0, 2, 3, 0, 0]
+action is
+[6, 8, 6, 2, 14, 8, 6, 1, 1, 3, 0, 2, 3, 0, 0]
+arg_name is select_add
+arg is [1]
+fn_id_idx is 6
+fn_id is 7
+fn name is select_army
+args is [[1]]
+function_id_agent: 
+3
+args_agent: 
+[6, 14, 14, 11, 13, 7, 0, 1, 8, 1, 1, 3, 0, 8]
+[3, 6, 14, 14, 11, 13, 7, 0, 1, 8, 1, 1, 3, 0, 8]
+action is
+[3, 6, 14, 14, 11, 13, 7, 0, 1, 8, 1, 1, 3, 0, 8]
+arg_name is select_add
+arg is [0]
+arg_name is screen
+arg is [6, 1]
+arg_name is screen2
+arg is [14, 1]
+fn_id_idx is 3
+fn_id is 3
+fn name is select_rect
+args is [[0], [6, 1], [14, 1]]
+function_id_agent: 
+19
+args_agent: 
+[7, 6, 1, 1, 10, 5, 0, 3, 5, 1, 2, 1, 1, 2]
+[19, 7, 6, 1, 1, 10, 5, 0, 3, 5, 1, 2, 1, 1, 2]
+action is
+[19, 7, 6, 1, 1, 10, 5, 0, 3, 5, 1, 2, 1, 1, 2]
+arg_name is queued
+arg is [1]
+arg_name is screen
+arg is [7, 1]
+fn_id_idx is 19
+fn_id is 333
+fn name is Patrol_screen
+args is [[1], [7, 1]]
+function_id_agent: 
+18
+args_agent: 
+[13, 12, 5, 14, 10, 13, 0, 3, 5, 1, 1, 2, 0, 7]
+[18, 13, 12, 5, 14, 10, 13, 0, 3, 5, 1, 1, 2, 0, 7]
+action is
+[18, 13, 12, 5, 14, 10, 13, 0, 3, 5, 1, 1, 2, 0, 7]
+arg_name is queued
+arg is [14]
+arg_name is minimap
+arg is [12, 1]
+fn_id_idx is 18
+fn_id is 332
+fn name is Move_minimap
+args is [[14], [12, 1]]
