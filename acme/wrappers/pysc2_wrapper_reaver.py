@@ -4,12 +4,14 @@ from absl import flags
 from pysc2.lib import actions
 from pysc2.lib import features
 from pysc2.lib import protocol
+from pysc2.lib import named_array
 from pysc2.env.environment import StepType
 from acme import specs
 from acme.sc2_types import SC2Space, SC2FuncIdSpace, Space
 from acme.sc2_spec import Spec
 import dm_env
 from pysc2.env import sc2_env
+import copy
 
 ACTIONS_MINIGAMES, ACTIONS_MINIGAMES_ALL, ACTIONS_ALL = [
     'minigames', 'minigames_all', 'all']
@@ -110,7 +112,7 @@ class Pysc2Wrapper(dm_env.Environment):
         return self.act_wrapper.spec
 
     def reward_spec(self) -> Space:
-        return Space(shape=(), dtype=np.float, domain=(0,float('inf')), name='reward')
+        return Space(shape=(), dtype=np.int64, domain=(0,float('inf')), name='reward')
 
     def discount_spec(self) -> Space:
         return Space(shape=(), dtype=np.float, domain=(0,1), name='discount')
@@ -145,8 +147,6 @@ class ObservationWrapper:
     def __call__(self, timestep) -> dm_env.TimeStep:
         timestep = timestep[0]
 
-        # if it is the last step then done is assigned to True
-        
         obs = timestep.observation
 
         obs_wrapped = [
@@ -195,6 +195,7 @@ class ObservationWrapper:
         for feat in self.features['non-spatial']:
             if 0 in spec[feat]:
                 spec[feat] = default_dims[feat]
+
             spaces.append(Space(spec[feat], name=feat))
 
         self.spec = Spec(spaces, 'Observation')
@@ -224,9 +225,8 @@ class ActionWrapper:
         self.args, self.spatial_dim = args, spatial_dim
 
     def __call__(self, action):
-        # print(type(action))
-        print("action is")
-        print(action)
+        # create a deepcoy of the action list so that it won't affect the original one
+        action_to_func_call = copy.deepcopy(action)
 
         default = {
             'control_group_act': 0,
@@ -238,27 +238,29 @@ class ActionWrapper:
             'unload_id': 0,
         }
         # fn_id_idx is the index position of the chosen function_id in the list "func_ids"
-        fn_id_idx, args = action.pop(0), []
+        fn_id_idx, args = action_to_func_call.pop(0), []
+
+        # get the real function id defined in pysc2 library
         fn_id = self.func_ids[fn_id_idx]
+
+        # create the argument list for the function id chosen
         for arg_type in actions.FUNCTIONS[fn_id].args:
             arg_name = arg_type.name
             if arg_name in self.args:
-                arg = action[self.args.index(arg_name)]
+                arg = action_to_func_call[self.args.index(arg_name)]
                 # pysc2 expects all args in their separate list
                 if type(arg) not in [list, tuple]:
                     arg = [arg]
-                    
                 # pysc2 expects spatial coords, but we have flattened => attempt to fix
                 # In random agent under the spatial coordinates are not flattened.
                 # if len(arg_type.sizes) > 1 and len(arg) == 1:
                 #     arg = [arg[0] % self.spatial_dim,
                 #            arg[0] // self.spatial_dim]
-
                 args.append(arg)
             else:
                 arg = [default[arg_name]]
                 args.append(arg)
-
+    
         return [actions.FunctionCall(fn_id, args)]
 
     def make_spec(self, spec):
@@ -268,11 +270,14 @@ class ActionWrapper:
         for arg_name in self.args:
             arg = getattr(spec.types, arg_name)
             if len(arg.sizes) > 1:
+                # two dimensional of the array to describe the spatial information
+                # example:
+                # Space "minimap", value: (2, 3)
                 spaces.append(
-                    Space(shape=arg.sizes,categorical=True, name=arg_name))
+                    Space(shape=(2,), domain=(0, self.spatial_dim), categorical=True, name=arg_name))
             else:
                 spaces.append(
-                    Space(shape=(arg.sizes[0],),domain=(0, arg.sizes[0]), categorical=True, name=arg_name))
+                    Space(shape=(), domain=(0, arg.sizes[0]), categorical=True, name=arg_name))
 
         self.spec = Spec(spaces, "Action")
         

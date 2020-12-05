@@ -6,7 +6,7 @@ We don't use the data types provided in acme's file "types.py" because it is les
 import numpy as np
 from typing import List
 from pysc2.lib import actions
-
+import numpy as np
 
 class Space:
     """
@@ -88,7 +88,7 @@ class SC2Space(Space):
 
 class SC2FuncIdSpace(Space):
     def __init__(self, func_ids, args):
-        super().__init__(domain=(0, len(func_ids)), categorical=True, name="function_id")
+        super().__init__(domain=(0,len(func_ids)), dtype=np.int64, categorical=True, name="function_id")
         self.args_mask = []
         for fn_id in func_ids:
             fn_id_args = [

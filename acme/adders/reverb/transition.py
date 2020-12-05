@@ -21,7 +21,7 @@ into a single transition, simplifying to a simple transition adder when N=1.
 
 import copy
 import itertools
-from typing import Optional,Union
+from typing import Optional,Union,List
 
 from acme import specs
 from acme import types
@@ -205,10 +205,15 @@ class SC2NStepTransitionAdder(base.ReverbAdder):
 
 
   Notes:
-    - The only different part from NStepTransitionAdder above is the signature classmethod
-      Because the original one assumes simple environment.
-      For example, the observation spec is assumed to be only a single Array 
-      with attribute shape and dtype but SCII has multiple arrays in the observation spec.
+    - The different part from NStepTransitionAdder above are:
+      * the signature classmethod
+        Because the original one assumes simple environment.
+        For example, the observation spec is assumed to be only a single Array 
+        with attribute shape and dtype but SCII has multiple arrays in the observation spec.
+
+      * the _write method
+        Because we need to convert the elements in transition to Tensor Object 
+        in order to append them into the reverb table
 
   """
 
@@ -272,6 +277,20 @@ class SC2NStepTransitionAdder(base.ReverbAdder):
       n_step_return += step.reward * total_discount
       total_discount *= step.discount
 
+
+    # convert the elements in transition to Tensor or List[Tensor]
+    observation = convert_to_tensor(observation)
+    action = convert_to_tensor(action)
+    n_step_return = convert_to_tensor(n_step_return)
+    total_discount = convert_to_tensor(total_discount)
+    next_observation = convert_to_tensor(next_observation)
+    
+    # convert n_step_return into np.int64
+    n_step_return = tf.cast(n_step_return, dtype=np.int64)
+
+    # convert discount into float
+    total_discount = tf.cast(total_discount, dtype=np.float)
+
     if extras:
       transition = (observation, action, n_step_return, total_discount,
                     next_observation, extras)
@@ -279,6 +298,7 @@ class SC2NStepTransitionAdder(base.ReverbAdder):
       transition = (observation, action, n_step_return, total_discount,
                     next_observation)
 
+                    
     # Create a list of steps.
     final_step = utils.final_step_like(self._buffer[0], next_observation)
     steps = list(self._buffer) + [final_step]
@@ -311,13 +331,20 @@ class SC2NStepTransitionAdder(base.ReverbAdder):
         environment_spec.observations,  # next_observation
     ]
 
-    print(tree.map_structure(spec_like_to_spec_nest,
-                              tuple(transition_spec)))
+    # print("actions in signature are: ")
+    # print(environment_spec.actions)
+    # print(str(len(environment_spec.actions)))
+
+    # print("oberservation in signature are: ")
+    # print(environment_spec.observations)
+    # print(str(len(environment_spec.observations)))
+
 
     return tree.map_structure(spec_like_to_spec_nest,
                               tuple(transition_spec))
 
 def spec_like_to_spec_nest(spec: Union[sc2_spec.Spec, sc2_types.Space]) -> reverb_types.SpecNest:
+  # spec here can either be a Spec or a Space used in StarCraft II environment
   if isinstance(spec, sc2_types.Space):
     return tf.TensorSpec.from_spec(spec, name=spec.name)
 
@@ -335,3 +362,19 @@ def spec_like_to_spec_nest(spec: Union[sc2_spec.Spec, sc2_types.Space]) -> rever
   else:
     raise ValueError(f'Unsupported spec: {spec}')
     
+def convert_to_tensor(transition_element) -> Union[tf.Tensor, List[tf.Tensor]]:
+  if isinstance(transition_element, List):
+    # observation is a list of pysc2.lib.named_array.NamedNumpyArray
+    # action is a python list including the function id and corresponded arguments
+
+    # create the tensor list to return
+    tensor_list = []
+
+    for list_element in transition_element:
+      list_element = tf.convert_to_tensor(list_element)
+      tensor_list.append(list_element)
+    
+    return tensor_list
+
+  else:
+    return tf.convert_to_tensor(transition_element)

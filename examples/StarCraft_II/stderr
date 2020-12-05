@@ -1,19 +1,19 @@
-2020-11-26 16:43:03.191750: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
-I1126 16:43:04.255366 139862431545152 sc_process.py:135] Launching SC2: /home/neal/StarCraftII/Versions/Base75689/SC2_x64 -listen 127.0.0.1 -port 24003 -dataDir /home/neal/StarCraftII/ -tempDir /tmp/sc-a7sylw6d/
-I1126 16:43:04.261369 139862431545152 remote_controller.py:167] Connecting to: ws://127.0.0.1:24003/sc2api, attempt: 0, running: True
+2020-12-05 21:52:11.924647: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+I1205 21:52:13.002386 139953429317440 sc_process.py:135] Launching SC2: /home/neal/StarCraftII/Versions/Base75689/SC2_x64 -listen 127.0.0.1 -port 23631 -dataDir /home/neal/StarCraftII/ -tempDir /tmp/sc-qnjt8fgu/
+I1205 21:52:13.007734 139953429317440 remote_controller.py:167] Connecting to: ws://127.0.0.1:23631/sc2api, attempt: 0, running: True
 Version: B75689 (SC2.4.10)
 Build: Aug 12 2019 17:16:57
-Command Line: '"/home/neal/StarCraftII/Versions/Base75689/SC2_x64" -listen 127.0.0.1 -port 24003 -dataDir /home/neal/StarCraftII/ -tempDir /tmp/sc-a7sylw6d/'
+Command Line: '"/home/neal/StarCraftII/Versions/Base75689/SC2_x64" -listen 127.0.0.1 -port 23631 -dataDir /home/neal/StarCraftII/ -tempDir /tmp/sc-qnjt8fgu/'
 Starting up...
 Startup Phase 1 complete
-I1126 16:43:05.263115 139862431545152 remote_controller.py:167] Connecting to: ws://127.0.0.1:24003/sc2api, attempt: 1, running: True
+I1205 21:52:14.009271 139953429317440 remote_controller.py:167] Connecting to: ws://127.0.0.1:23631/sc2api, attempt: 1, running: True
 Startup Phase 2 complete
 Creating stub renderer...
-Listening on: 127.0.0.1:24003
+Listening on: 127.0.0.1:23631
 Startup Phase 3 complete. Ready for commands.
-I1126 16:43:06.265261 139862431545152 remote_controller.py:167] Connecting to: ws://127.0.0.1:24003/sc2api, attempt: 2, running: True
-ConnectHandler: Request from 127.0.0.1:49606 accepted
-ReadyHandler: 127.0.0.1:49606 ready
+I1205 21:52:15.010587 139953429317440 remote_controller.py:167] Connecting to: ws://127.0.0.1:23631/sc2api, attempt: 2, running: True
+ConnectHandler: Request from 127.0.0.1:38292 accepted
+ReadyHandler: 127.0.0.1:38292 ready
 Requesting to join a single player game
 Configuring interface options
 Configure: raw interface disabled
@@ -32,42 +32,66 @@ Game has started.
 Using default stable ids, none found at: /home/neal/StarCraftII/stableid.json
 Successfully loaded stable ids: GameData\stableid.json
 Sending ResponseJoinGame
-I1126 16:43:09.463125 139862431545152 sc2_env.py:316] Environment is ready
-[reverb/cc/platform/tfrecord_checkpointer.cc:143] Initializing TFRecordCheckpointer in /tmp/tmpzl75p1p_
-[reverb/cc/platform/tfrecord_checkpointer.cc:320] Loading latest checkpoint from /tmp/tmpzl75p1p_
-[reverb/cc/platform/default/server.cc:55] Started replay server on port 20228
-I1126 16:43:09.512406 139862431545152 csv.py:42] Logging to environment_loop/6561014e-2fc3-11eb-a86f-5c80b69e6231/logs/logs.csv
-I1126 16:43:09.512542 139862431545152 sc2_env.py:509] Starting episode 1: [terran] on MoveToBeacon
-Traceback (most recent call last):
-  File "run_random.py", line 59, in <module>
-    app.run(main)
-  File "/home/neal/anaconda3/envs/acme/lib/python3.7/site-packages/absl/app.py", line 300, in run
-    _run_main(main, args)
-  File "/home/neal/anaconda3/envs/acme/lib/python3.7/site-packages/absl/app.py", line 251, in _run_main
-    sys.exit(main(argv))
-  File "run_random.py", line 56, in main
-    loop.run(FLAGS.num_episodes)
-  File "/home/neal/Desktop/acme/acme/environment_loop.py", line 140, in run
-    result = self.run_episode()
-  File "/home/neal/Desktop/acme/acme/environment_loop.py", line 89, in run_episode
-    self._actor.observe(action, next_timestep=timestep)
-  File "/home/neal/Desktop/acme/acme/agents/StarCraft2/random_actor.py", line 86, in observe
-    self._adder.add(action, next_timestep)
-  File "/home/neal/Desktop/acme/acme/adders/reverb/base.py", line 171, in add
-    self._write()
-  File "/home/neal/Desktop/acme/acme/adders/reverb/transition.py", line 293, in _write
-    table=table, num_timesteps=1, priority=priority)
-  File "/home/neal/anaconda3/envs/acme/lib/python3.7/site-packages/reverb/client.py", line 175, in create_item
-    self._writer.CreateItem(table, num_timesteps, priority)
-ValueError: Unable to CreateItem to table priority_table because Append was called with a tensor signature inconsistent with table signature.  Append for timestep offset 0 was called with 24 tensors, but table requires 22 tensors per entry.  Table signature: 0: Tensor<name: 'screen{player_relative, selected, visibility_map, unit_hit_points_ratio, unit_density}', dtype: int32, shape: [5,16,16]>, 1: Tensor<name: 'minimap{player_relative, selected, visibility_map, camera}', dtype: int32, shape: [4,16,16]>, 2: Tensor<name: 'available_actions', dtype: int32, shape: [25]>, 3: Tensor<name: 'player', dtype: int32, shape: [11]>, 4: Tensor<name: 'function_id', dtype: int32, shape: []>, 5: Tensor<name: 'screen', dtype: int32, shape: [16,16]>, 6: Tensor<name: 'minimap', dtype: int32, shape: [16,16]>, 7: Tensor<name: 'screen2', dtype: int32, shape: [16,16]>, 8: Tensor<name: 'queued', dtype: int32, shape: [2]>, 9: Tensor<name: 'control_group_act', dtype: int32, shape: [5]>, 10: Tensor<name: 'control_group_id', dtype: int32, shape: [10]>, 11: Tensor<name: 'select_add', dtype: int32, shape: [2]>, 12: Tensor<name: 'select_point_act', dtype: int32, shape: [4]>, 13: Tensor<name: 'select_unit_act', dtype: int32, shape: [4]>, 14: Tensor<name: 'select_worker', dtype: int32, shape: [4]>, 15: Tensor<name: 'build_queue_id', dtype: int32, shape: [10]>, 16: Tensor<name: 'reward', dtype: float, shape: []>, 17: Tensor<name: 'discount', dtype: float, shape: []>, 18: Tensor<name: 'screen{player_relative, selected, visibility_map, unit_hit_points_ratio, unit_density}', dtype: int32, shape: [5,16,16]>, 19: Tensor<name: 'minimap{player_relative, selected, visibility_map, camera}', dtype: int32, shape: [4,16,16]>, 20: Tensor<name: 'available_actions', dtype: int32, shape: [25]>, 21: Tensor<name: 'player', dtype: int32, shape: [11]>
-I1126 16:43:09.616946 139862431545152 sc2_env.py:754] Environment Close
-DataHandler: unable to parse websocket frame.
+I1205 21:52:18.046545 139953429317440 sc2_env.py:316] Environment is ready
+[reverb/cc/platform/tfrecord_checkpointer.cc:143] Initializing TFRecordCheckpointer in /tmp/tmphs8fx00w
+[reverb/cc/platform/tfrecord_checkpointer.cc:320] Loading latest checkpoint from /tmp/tmphs8fx00w
+[reverb/cc/platform/default/server.cc:55] Started replay server on port 22305
+I1205 21:52:18.086668 139953429317440 csv.py:42] Logging to environment_loop/130136e0-3701-11eb-9e41-5c80b69e6231/logs/logs.csv
+I1205 21:52:18.086801 139953429317440 sc2_env.py:509] Starting episode 1: [terran] on MoveToBeacon
+2020-12-05 21:52:18.092737: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcuda.so.1
+2020-12-05 21:52:18.123198: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:982] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-12-05 21:52:18.123467: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: GeForce RTX 2080 with Max-Q Design computeCapability: 7.5
+coreClock: 1.23GHz coreCount: 46 deviceMemorySize: 7.79GiB deviceMemoryBandwidth: 357.69GiB/s
+2020-12-05 21:52:18.123493: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+2020-12-05 21:52:18.124420: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcublas.so.10
+2020-12-05 21:52:18.125353: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcufft.so.10
+2020-12-05 21:52:18.125515: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcurand.so.10
+2020-12-05 21:52:18.126517: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusolver.so.10
+2020-12-05 21:52:18.127083: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusparse.so.10
+2020-12-05 21:52:18.129148: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudnn.so.7
+2020-12-05 21:52:18.129236: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:982] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-12-05 21:52:18.129524: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:982] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-12-05 21:52:18.129747: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1858] Adding visible gpu devices: 0
+2020-12-05 21:52:18.129972: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN)to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2020-12-05 21:52:18.134598: I tensorflow/core/platform/profile_utils/cpu_utils.cc:104] CPU Frequency: 2400000000 Hz
+2020-12-05 21:52:18.134949: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55d292415370 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-12-05 21:52:18.134962: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2020-12-05 21:52:18.187999: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:982] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-12-05 21:52:18.188390: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55d29240f370 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2020-12-05 21:52:18.188407: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): GeForce RTX 2080 with Max-Q Design, Compute Capability 7.5
+2020-12-05 21:52:18.188555: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:982] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-12-05 21:52:18.188776: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: GeForce RTX 2080 with Max-Q Design computeCapability: 7.5
+coreClock: 1.23GHz coreCount: 46 deviceMemorySize: 7.79GiB deviceMemoryBandwidth: 357.69GiB/s
+2020-12-05 21:52:18.188813: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+2020-12-05 21:52:18.188836: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcublas.so.10
+2020-12-05 21:52:18.188852: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcufft.so.10
+2020-12-05 21:52:18.188868: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcurand.so.10
+2020-12-05 21:52:18.188884: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusolver.so.10
+2020-12-05 21:52:18.188900: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusparse.so.10
+2020-12-05 21:52:18.188917: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudnn.so.7
+2020-12-05 21:52:18.188962: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:982] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-12-05 21:52:18.189195: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:982] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-12-05 21:52:18.189396: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1858] Adding visible gpu devices: 0
+2020-12-05 21:52:18.189422: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+2020-12-05 21:52:18.472551: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1257] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-12-05 21:52:18.472581: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1263]      0 
+2020-12-05 21:52:18.472588: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1276] 0:   N 
+2020-12-05 21:52:18.472736: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:982] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-12-05 21:52:18.473008: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:982] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-12-05 21:52:18.473242: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1402] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 6342 MB memory) -> physical GPU (device: 0, name: GeForce RTX 2080 with Max-Q Design, pci bus id: 0000:01:00.0, compute capability: 7.5)
+I1205 21:52:19.261142 139953429317440 sc2_env.py:727] Episode 1 finished after 1920 game steps. Outcome: [1], reward: [0], score: [0]
+Game has started.
+I1205 21:52:19.269204 139953429317440 sc2_env.py:509] Starting episode 2: [terran] on MoveToBeacon
+I1205 21:52:19.981558 139953429317440 sc2_env.py:727] Episode 2 finished after 1920 game steps. Outcome: [1], reward: [0], score: [1]
+I1205 21:52:19.982856 139953429317440 sc2_env.py:754] Environment Close
 RequestQuit command received.
+DataHandler: unable to parse websocket frame.
+CloseHandler: 127.0.0.1:38292 disconnected
 Closing Application...
-CloseHandler: 127.0.0.1:49606 disconnected
 ResponseThread: No connection, dropping the response.
-I1126 16:43:09.717958 139862431545152 sc_process.py:232] Shutdown gracefully.
-I1126 16:43:09.718303 139862431545152 sc_process.py:210] Shutdown with return code: -15
+I1205 21:52:20.089643 139953429317440 sc_process.py:232] Shutdown gracefully.
+I1205 21:52:20.089737 139953429317440 sc_process.py:210] Shutdown with return code: -15
 [reverb/cc/platform/default/server.cc:64] Shutting down replay server
-W1126 16:43:14.723795 139862431545152 client.py:112] Writer-object deleted without calling .close explicitly.
-[reverb/cc/writer.cc:244] Received error when closing the stream: [14] Socket closed
